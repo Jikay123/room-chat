@@ -136,10 +136,16 @@ function ChatMain() {
         console.log({ newValue }, "new")
         setValue(newValue)
     }
+    useEffect(() => {
+        window.setInterval(function () {
+            var elem = document.querySelector('.content');
+            elem.scrollTop = elem.scrollHeight;
+        }, 1000);
+    }, [])
 
     useEffect(() => {
         try {
-            const uncribe = db.collection('rooms').doc(selectRoomId)?.collection('messages')?.orderBy('timestamp', 'desc')
+            const uncribe = db.collection('rooms').doc(selectRoomId)?.collection('messages')?.orderBy('timestamp', 'asc')
                 .onSnapshot((snap) => {
                     setMessageList([...snap.docs.map((item) => ({ id: item.id, data: item.data() }))])
                 })
@@ -147,8 +153,8 @@ function ChatMain() {
         } catch (error) {
             console.error(error.message)
         }
-    }, [selectRoomId])
 
+    }, [selectRoomId])
 
     const formatDate = (seconds) => {
         let formatedDate = "";
@@ -202,7 +208,7 @@ function ChatMain() {
                         </Form>
                     </Modal>
                     <div className="content">
-                        {messageList.map(({ id, data }) => (
+                        {messageList.reverse().map(({ id, data }) => (
                             <div className="item" key={id}>
                                 <div className="info">
                                     <Avatar src={data?.photoURL}>{data?.photoURL ? "" : data.displayName?.charAt(0).toUpperCase()}</Avatar>
