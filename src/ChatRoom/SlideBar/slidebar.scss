@@ -1,0 +1,169 @@
+.slidebar {
+    background: linear-gradient(40deg, #009688, #4CAF50);
+    // background: linear-gradient(to left);
+    min-height: 100vh;
+    position: relative;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 16px;
+        border-bottom: 1px solid #fafafa;
+
+        .info {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+
+                box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .text {
+                font-size: 12px;
+                font-weight: 500;
+                margin-left: 5px;
+                color: #fff;
+            }
+        }
+
+        .button {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            transition: all 0.25s ease-in-out;
+
+
+            &:hover {
+                color: crimson;
+                border-color: crimson;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .slide__group {
+        text-align: left;
+
+        * {
+            color: #fff;
+        }
+
+        .toggle {
+            width: 100%;
+            font-size: 13px;
+
+            .MuiButton-label {
+                justify-content: flex-start;
+            }
+        }
+
+        .collap {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            align-items: flex-end;
+
+
+
+            .item,
+            .item__add {
+                font-size: 12px;
+            }
+
+            .item {
+                width: 90%;
+                justify-content: flex-start;
+                background-color: linear-gradient(40deg, #009688, #4CAF50);
+
+                &:hover {
+                    p {
+                        color: aqua;
+                    }
+                }
+
+                p {
+                    font-weight: bold;
+                    color: #D0E1F9;
+                }
+            }
+
+            .item__add {
+                text-align: left;
+                justify-content: flex-start;
+
+                align-content: center;
+                width: 90%;
+                background-color: linear-gradient(40deg, #009688, #4CAF50);
+
+
+                p {
+                    color: #D0E1F9;
+                    font-weight: bold;
+                }
+
+                .MuiSvgIcon-root {
+                    width: 20px;
+                    height: 20px;
+
+                    &>* {
+                        color: #D0E1F9;
+
+                    }
+
+                }
+
+                &:hover {
+
+                    * {
+                        color: aqua;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+.formAdd {
+    position: absolute;
+    min-width: 500px;
+    min-height: 65vh;
+    background-color: #fff;
+    border-radius: 5px;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .formAdd__room {
+        display: flex;
+        flex-direction: column;
+
+        &>* {
+            margin: 10px;
+        }
+
+        .formAdd__button {
+            display: flex;
+            justify-content: flex-end;
+
+            &>* {
+                margin: 10px;
+            }
+        }
+    }
+}

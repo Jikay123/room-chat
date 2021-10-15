@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AuthProvider from './Context/AuthContext';
+import RoomContext from './Context/RoomContext';
+import 'antd/dist/antd.css';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <RoomContext >
+        <App />
+      </RoomContext>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

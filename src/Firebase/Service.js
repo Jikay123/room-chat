@@ -1,24 +1,9 @@
-# Note sau project
-
-0. library :
-   date-fns/esm
-1. custom hook
-2. Material ui: <Avatar> , <Tooltip> , <Grid> , <Modal>
-
-# ==> Antd
-
-3. Firebase
-4. Login width gmail, fb
-5. Context API
-6. Logic thuật toán find user
-
-# Liệt kê các ký tự có thể nối liền kề với nhau ==> tìm kiếm
-
-const generateKeywords = (displayName) => {
-
-    const name = displayName.split(' ').filter((word) => word); ==> tách chuỗi thành mảng các từ kết hợp trong chuỗi
-
-    VD: "tach chuoi" => ["tach", "chuoi"]
+// import firebase from "firebase";
+// import db from "./index";
+export const generateKeywords = (displayName) => {
+    // liet ke tat cac hoan vi. vd: name = ["David", "Van", "Teo"]
+    // => ["David", "Van", "Teo"], ["David", "Teo", "Van"], ["Teo", "David", "Van"],...
+    const name = displayName.split(' ').filter((word) => word);
 
     const length = name.length;
     let flagArray = [];
@@ -70,5 +55,4 @@ const generateKeywords = (displayName) => {
     }, []);
 
     return keywords;
-
 };
