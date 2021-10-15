@@ -108,7 +108,7 @@ function SlideBar({ user }) {
                 <div className="formAdd" style={ModalStyle}>
                     <div className="title">
                         <h3>Tạo phòng</h3>
-                        <IconButton><Close /></IconButton>
+                        <IconButton onClick={handleCloseModal}><Close /></IconButton>
                     </div>
                     <form className="formAdd__room"  >
                         <TextField value={name} onChange={(e) => setName(e.target.value)} label="Tên phòng" variant="outlined" />
